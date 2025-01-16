@@ -1,0 +1,112 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Layout Styles */
+.content {
+    display: flex;
+    margin-top: 60px; /* To account for the fixed navbar */
+}
+
+.left-menu {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.left-menu ul {
+    list-style: none;
+}
+
+.left-menu li {
+    margin: 10px 0;
+}
+
+.left-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #e9e9e9;
+}
+
+.right-panel {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsiveness Styles */
+@media (max-width: 992px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .left-menu,
+    .right-panel {
+        width: 100%;
+        order: 1;
+    }
+
+    .main-content {
+        order: 2;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .left-menu ul {
+        display: none;
+    }
+
+    .left-menu.active ul {
+        display: block;
+    }
+}
